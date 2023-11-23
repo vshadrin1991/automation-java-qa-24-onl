@@ -1,0 +1,101 @@
+{
+  "id": "4aba773f-38aa-4495-8629-a81daf477fed",
+  "version": "2.0",
+  "name": "bmicalculator",
+  "url": "https://healthunify.com/bmicalculator/",
+  "tests": [{
+    "id": "bb87a024-a201-4c03-8a37-d2e5f8123149",
+    "name": "Smoke test",
+    "commands": [{
+      "id": "1c67bb1c-8f06-4297-8ebb-787a8684482c",
+      "comment": "",
+      "command": "open",
+      "target": "https://healthunify.com/bmicalculator/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b1fd0867-9576-4285-be5e-1f70353603bd",
+      "comment": "",
+      "command": "click",
+      "target": "name=wg",
+      "targets": [
+        ["name=wg", "name"],
+        ["css=p:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='wg']", "xpath:attributes"],
+        ["xpath=//article[@id='post-556']/div/div/form/p/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c33f828-b57a-4d65-8664-693f30340ba6",
+      "comment": "",
+      "command": "type",
+      "target": "name=wg",
+      "targets": [
+        ["name=wg", "name"],
+        ["css=p:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='wg']", "xpath:attributes"],
+        ["xpath=//article[@id='post-556']/div/div/form/p/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "70"
+    }, {
+      "id": "c7198089-c473-4d99-95c4-069ba021070a",
+      "comment": "",
+      "command": "select",
+      "target": "name=opt2",
+      "targets": [],
+      "value": "label=4′"
+    }, {
+      "id": "aaea8921-8fa2-4a25-9142-31484b93835d",
+      "comment": "",
+      "command": "select",
+      "target": "name=opt3",
+      "targets": [],
+      "value": "label=5″"
+    }, {
+      "id": "2f471e70-d4bf-43cc-8c15-7920acde0358",
+      "comment": "",
+      "command": "click",
+      "target": "name=cc",
+      "targets": [
+        ["name=cc", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='cc']", "xpath:attributes"],
+        ["xpath=//article[@id='post-556']/div/div/form/p[3]/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e68f042b-a409-44df-ae47-58ed044503d1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=desc",
+      "targets": [
+        ["name=desc", "name"],
+        ["css=.content", "css:finder"],
+        ["xpath=//input[@name='desc']", "xpath:attributes"],
+        ["xpath=//article[@id='post-556']/div/div/form/table[2]/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//table[2]/tbody/tr/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbcbb9a5-c76d-45b2-aa76-92b152a2afa5",
+      "comment": "",
+      "command": "assertValue",
+      "target": "name=desc",
+      "targets": [],
+      "value": "Your category is Obese"
+    }]
+  }],
+  "suites": [{
+    "id": "1e040d75-7923-40dc-8c20-5423b9883a4a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["bb87a024-a201-4c03-8a37-d2e5f8123149"]
+  }],
+  "urls": ["https://healthunify.com/bmicalculator/"],
+  "plugins": []
+}
