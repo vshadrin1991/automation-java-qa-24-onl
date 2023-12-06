@@ -1,6 +1,7 @@
 package lecture_5;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -19,7 +20,7 @@ public class BMICalculatorTests {
     @Test
     public void smokeTest() {
         getWebDriver().findElement(By.xpath("//input[@name='wg']")).click();
-        getWebDriver().findElement(By.name("wg")).sendKeys("70");
+        getWebDriver().findElement(By.name("wg")).sendKeys(Keys.chord( "a"));
         Select opt2 = new Select(getWebDriver().findElement(By.name("opt2")));
         opt2.selectByValue("4");
         Select opt3 = new Select(getWebDriver().findElement(By.name("opt3")));
