@@ -20,7 +20,7 @@ public class BMICalculatorTests {
     @Test
     public void smokeTest() {
         getWebDriver().findElement(By.xpath("//input[@name='wg']")).click();
-        getWebDriver().findElement(By.name("wg")).sendKeys(Keys.chord( "a"));
+        getWebDriver().findElement(By.name("wg")).sendKeys(Keys.chord("a"));
         Select opt2 = new Select(getWebDriver().findElement(By.name("opt2")));
         opt2.selectByValue("4");
         Select opt3 = new Select(getWebDriver().findElement(By.name("opt3")));

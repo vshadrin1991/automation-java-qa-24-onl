@@ -6,6 +6,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static driver.SimpleWebDriver.*;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
@@ -30,10 +34,18 @@ public class Lesson6 {
 
     @Test
     public void sourceDemoTests() {
+        List<String> usernames = Arrays.stream(getWebDriver().findElement(By.id("login_credentials")).getText().split("\n"))
+                .filter(value -> !value.contains("Accepted usernames are"))
+                .collect(Collectors.toList());
+
+        String passwords = Arrays.stream(getWebDriver().findElement(By.className("login_password")).getText().split("\n"))
+                .filter(value -> !value.contains("Password for all users"))
+                .findFirst().orElse("");
+
         getWebDriver().findElement(with(By.tagName("input")).above(By.id("password"))).sendKeys("username");
         getWebDriver().findElement(with(By.tagName("input")).below(By.id("password"))).click();
-        System.out.println( getWebDriver().findElements(with(By.tagName("input")).near(By.id("password"))).size());
-        System.out.println( getWebDriver().findElements(with(By.tagName("input")).near(By.id("password"), 100)).size());
+        System.out.println(getWebDriver().findElements(with(By.tagName("input")).near(By.id("password"))).size());
+        System.out.println(getWebDriver().findElements(with(By.tagName("input")).near(By.id("password"), 100)).size());
 
         getWebDriver().findElement(By.id("user-name")).clear();
         getWebDriver().findElement(By.id("user-name")).sendKeys("standard_user");

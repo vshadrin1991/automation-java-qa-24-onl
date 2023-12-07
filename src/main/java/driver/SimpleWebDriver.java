@@ -9,12 +9,6 @@ import java.time.Duration;
 public class SimpleWebDriver {
     private static WebDriver webDriver;
 
-    {
-        if (webDriver == null) {
-            webDriver = new ChromeDriver(chromeOptions());
-            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        }
-    }
 
     public static void setUpWebDriver(String url) {
         if (webDriver == null) {
