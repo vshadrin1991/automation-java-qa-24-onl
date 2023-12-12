@@ -9,7 +9,6 @@ import java.time.Duration;
 public class SimpleWebDriver {
     private static WebDriver webDriver;
 
-
     public static void setUpWebDriver(String url) {
         if (webDriver == null) {
             webDriver = new ChromeDriver(chromeOptions());
@@ -17,7 +16,6 @@ public class SimpleWebDriver {
             webDriver.get(url);
         }
     }
-
 
     public static WebDriver getWebDriver() {
         return webDriver;
