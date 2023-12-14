@@ -5,7 +5,8 @@ public enum HomePageItems {
     ADD_REMOVE_ELEMENTS("Add/Remove Elements"),
     CHECKBOX("Checkboxes"),
     INFINITE_SCROLL("Infinite Scroll"),
-    FRAMES("Frames");
+    FRAMES("Frames"),
+    DYNAMIC_CONTROLS("Dynamic Controls");
 
     private final String item;
 

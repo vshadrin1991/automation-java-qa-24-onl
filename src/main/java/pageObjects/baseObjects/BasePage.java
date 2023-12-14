@@ -1,10 +1,10 @@
 package pageObjects.baseObjects;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -19,7 +19,7 @@ public abstract class BasePage {
 
     {
         driver = getDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(1));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         actions = new Actions(driver);
     }
 
@@ -29,11 +29,13 @@ public abstract class BasePage {
     }
 
     protected void click(By by) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         click(driver.findElement(by));
     }
 
     protected void click(WebElement element) {
         System.out.println("Click on element :: " + element);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
 
@@ -45,6 +47,14 @@ public abstract class BasePage {
         System.out.println("Enter in :: " + element + ", next values :: " + Arrays.toString(charSequences));
         element.clear();
         element.sendKeys(charSequences);
+    }
+
+    protected void waitUntil(Integer seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     protected Integer getElementsCount(By by) {

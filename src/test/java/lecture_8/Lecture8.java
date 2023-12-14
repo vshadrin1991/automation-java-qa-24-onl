@@ -52,4 +52,12 @@ public class Lecture8 extends BaseTest {
         frames.enterText("Hello world!");
         frames.unSwitchToFrame();
     }
+
+    @Test(priority = 5)
+    public void dynamicControlsTest() {
+        DynamicControlsPage dynamicControlsPage = new DynamicControlsPage();
+        homePage.clickOnItem(DYNAMIC_CONTROLS);
+        dynamicControlsPage.verifyPage();
+        dynamicControlsPage.verifyThatCheckNotExist();
+    }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lecture 9" thread-count="4" parallel="tests">
+    <test name="Lecture 9 1">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="lecture_9.Lecture9_1"/>
+            <class name="lecture_9.Lecture9_2"/>
+        </classes>
+    </test>
+
+    <test name="Lecture 9 2">
+        <classes>
+            <class name="lecture_9.Lecture9_1"/>
+        </classes>
+    </test>
+
+    <test name="Lecture 9 3" >
+        <classes>
+            <class name="lecture_9.Lecture9_3"/>
+        </classes>
+    </test>
+
+    <parameter name="url" value="https://www.saucedemo.com"/>
+    <test name="Data Provider Test">
+        <classes>
+            <class name="lecture_9.DataProviderTest"/>
+        </classes>
+    </test>
+</suite>
