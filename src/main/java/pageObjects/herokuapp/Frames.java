@@ -32,6 +32,7 @@ public class Frames extends BasePage {
     }
 
     public void enterText(String text) {
+        System.out.println(driver.findElement(textField).getText());
         sendKeys(textField, text);
     }
 

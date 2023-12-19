@@ -29,7 +29,7 @@ public abstract class BasePage {
     }
 
     protected void click(By by) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        wait.until(ExpectedConditions.elementToBeClickable(by));
         click(driver.findElement(by));
     }
 

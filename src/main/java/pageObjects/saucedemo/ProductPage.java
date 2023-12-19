@@ -3,6 +3,7 @@ package pageObjects.saucedemo;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
+import pageObjects.saucedemo.elemets.HeaderElement;
 
 import static driver.DriverCreation.getDriver;
 
@@ -10,6 +11,8 @@ public class ProductPage extends BasePage {
     private final By header = By.className("app_logo");
     private final By productList = By.className("inventory_item");
     private final By addToCard = By.tagName("button");
+    public HeaderElement headerElement = new HeaderElement();
+
 
     public void verifyPage() {
         Assert.assertEquals(getDriver().findElement(header).getText(), "Swag Labs", "Wrong header name.");

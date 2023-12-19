@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static driver.SimpleWebDriver.getWebDriver;
+import static driver.SimpleWebDriver.*;
 
 public class GoogleTests {
 
@@ -21,7 +21,7 @@ public class GoogleTests {
 
     @BeforeTest
     public void setUp() {
-        getWebDriver().get("http://google.com");
+        setUpWebDriver("http://google.com");
     }
 
     @Test
@@ -49,6 +49,6 @@ public class GoogleTests {
 
     @AfterTest
     public void tearDown() {
-        getWebDriver().quit();
+        quit();
     }
 }

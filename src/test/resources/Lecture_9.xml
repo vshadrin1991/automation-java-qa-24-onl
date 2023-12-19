@@ -20,7 +20,7 @@
         </classes>
     </test>
 
-    <test name="Lecture 9 3" >
+    <test name="Lecture 9 3">
         <classes>
             <class name="lecture_9.Lecture9_3"/>
         </classes>

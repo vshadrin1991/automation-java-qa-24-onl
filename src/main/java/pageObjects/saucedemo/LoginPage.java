@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static driver.DriverCreation.getDriver;
+import static propertyUtils.PropertyReader.getProperties;
 
 public class LoginPage extends BasePage {
     private final By header = By.className("login_logo");
@@ -22,6 +23,10 @@ public class LoginPage extends BasePage {
         getDriver().get(url);
     }
 
+    public void open() {
+        getDriver().get(getProperties().getProperty("url"));
+    }
+
     public void verifyPage() {
         Assert.assertEquals(getDriver().findElement(header).getText(), "Swag Labs", "Wrong header name.");
         Arrays.asList(username, password, login).forEach(el -> Assert.assertTrue(getDriver().findElement(el).isDisplayed(), "Element not displayed :: " + el));
@@ -32,8 +37,16 @@ public class LoginPage extends BasePage {
         sendKeys(this.username, username);
     }
 
+    public void enterUsername() {
+        sendKeys(this.username, getProperties().getProperty("username"));
+    }
+
     public void enterPassword(String password) {
         sendKeys(this.password, password);
+    }
+
+    public void enterPassword() {
+        sendKeys(this.password, getProperties().getProperty("password"));
     }
 
     public void clickLogin() {

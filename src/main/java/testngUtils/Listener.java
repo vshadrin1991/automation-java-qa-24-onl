@@ -3,11 +3,15 @@ package testngUtils;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 
+import static propertyUtils.PropertyReader.setUpProperty;
+
 public class Listener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        System.out.println("Hello i'am started with ::" + context.getSuite().getName());
+        if (System.getProperties().containsKey("config")) {
+            setUpProperty(System.getProperty("config"));
+        }
     }
 
     @Override

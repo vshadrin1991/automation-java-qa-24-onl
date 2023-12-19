@@ -8,13 +8,18 @@ import testngUtils.Listener;
 import static driver.DriverCreation.createDriver;
 import static driver.DriverCreation.quitDriver;
 import static driver.DriverTypes.CHROME;
+import static driver.DriverTypes.valueOf;
+import static propertyUtils.PropertyReader.getProperties;
 
 @Listeners(Listener.class)
 public abstract class BaseTest {
 
     @BeforeTest
     protected void setUp() {
-        createDriver(CHROME);
+        createDriver(System.getProperties().containsKey("config")
+                ? valueOf(getProperties().getProperty("browser").toUpperCase())
+                : CHROME
+        );
     }
 
     @AfterTest(alwaysRun = true)

@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import pageObjects.baseObjects.BasePage;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public class HomePage extends BasePage {
 

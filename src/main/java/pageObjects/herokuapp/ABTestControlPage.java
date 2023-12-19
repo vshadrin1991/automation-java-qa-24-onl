@@ -3,7 +3,8 @@ package pageObjects.herokuapp;
 import org.openqa.selenium.By;
 import pageObjects.baseObjects.BasePage;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.*;
+import static org.openqa.selenium.support.ui.ExpectedConditions.or;
+import static org.openqa.selenium.support.ui.ExpectedConditions.textToBe;
 
 public class ABTestControlPage extends BasePage {
 

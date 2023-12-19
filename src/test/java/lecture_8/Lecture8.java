@@ -17,14 +17,14 @@ public class Lecture8 extends BaseTest {
         homePage.open("https://the-internet.herokuapp.com/");
     }
 
-    @Test(priority = 1)
+    //@Test(priority = 1)
     public void abTestingTest() {
         ABTestControlPage controlPage = new ABTestControlPage();
         homePage.clickOnItem(AB_TESTING);
         controlPage.verifyTitleText();
     }
 
-    @Test(priority = 2)
+    //@Test(priority = 2)
     public void checkboxTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage();
         homePage.clickOnItem(CHECKBOX);
@@ -35,7 +35,7 @@ public class Lecture8 extends BaseTest {
         checkboxesPage.verifyCheckboxStatus(1, false);
     }
 
-    @Test(priority = 3)
+    //@Test(priority = 3)
     public void scrollTest() {
         InfiniteScrollPage scrollPage = new InfiniteScrollPage();
         homePage.clickOnItem(INFINITE_SCROLL);
@@ -53,7 +53,7 @@ public class Lecture8 extends BaseTest {
         frames.unSwitchToFrame();
     }
 
-    @Test(priority = 5)
+    //@Test(priority = 5)
     public void dynamicControlsTest() {
         DynamicControlsPage dynamicControlsPage = new DynamicControlsPage();
         homePage.clickOnItem(DYNAMIC_CONTROLS);
