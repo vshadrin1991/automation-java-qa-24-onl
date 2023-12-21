@@ -6,7 +6,8 @@ public enum HomePageItems {
     CHECKBOX("Checkboxes"),
     INFINITE_SCROLL("Infinite Scroll"),
     FRAMES("Frames"),
-    DYNAMIC_CONTROLS("Dynamic Controls");
+    DYNAMIC_CONTROLS("Dynamic Controls"),
+    FILE_DOWNLOAD("File Download");
 
     private final String item;
 

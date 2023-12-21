@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.herokuapp.*;
+import pageObjects.herokuapp.home.HomePage;
 
 import static pageObjects.herokuapp.HomePageItems.*;
 

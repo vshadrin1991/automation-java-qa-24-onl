@@ -14,7 +14,7 @@ import static driver.DriverCreation.getDriver;
 
 public abstract class BasePage {
     protected WebDriver driver;
-    protected WebDriverWait wait;
+    public WebDriverWait wait;
     protected Actions actions;
 
     {

@@ -8,6 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
+import java.util.HashMap;
+
+import static java.io.File.separator;
 
 public class DriverCreation {
 
@@ -19,6 +22,10 @@ public class DriverCreation {
                 case CHROME:
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("start-maximized");
+                    options.setExperimentalOption("prefs", new HashMap<>() {{
+                        put("profile.default_content_settings.popups", 0);
+                        put("download.default_directory", System.getProperty("user.dir") + separator + "target");
+                    }});
                     webDriver = new ChromeDriver(options);
                     break;
                 case FIREFOX:
@@ -39,5 +46,6 @@ public class DriverCreation {
 
     public static void quitDriver() {
         webDriver.quit();
+        webDriver = null;
     }
 }
