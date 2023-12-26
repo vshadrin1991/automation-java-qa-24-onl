@@ -17,7 +17,6 @@ public class Frames extends BasePage {
         return By.linkText(name);
     }
 
-
     public void verifyTitleText() {
         wait.until(textToBe(header, "Frames"));
     }

@@ -19,13 +19,13 @@ public class FileDownloadTest extends BaseTest {
     }
 
     @Description("File download test")
-    @Step("Download Test1.pdf")
+    @Step("Download some-file.txt")
     @Link("https://the-internet.herokuapp.com/download")
     @Test(priority = 1)
     public void firstFileDownloadTest() {
         FileDownloadPage downloadPage = new FileDownloadPage();
         downloadPage.verifyTitleText();
-        downloadPage.downloadFile("Test1.pdf");
+        downloadPage.downloadFile("some-file.txt");
     }
 
     @Description("File download test")

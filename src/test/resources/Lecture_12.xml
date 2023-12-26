@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lecture 12">
+    <parameter name="item" value="SORTABLE_DATA_TABLES"/>
+    <test name="Sort table test">
+        <classes>
+            <class name="lecture_12.HomePageTest"/>
+            <class name="lecture_12.SortableDataTablesTest"/>
+        </classes>
+    </test>
+</suite>

@@ -7,7 +7,8 @@ public enum HomePageItems {
     INFINITE_SCROLL("Infinite Scroll"),
     FRAMES("Frames"),
     DYNAMIC_CONTROLS("Dynamic Controls"),
-    FILE_DOWNLOAD("File Download");
+    FILE_DOWNLOAD("File Download"),
+    SORTABLE_DATA_TABLES("Sortable Data Tables");
 
     private final String item;
 
