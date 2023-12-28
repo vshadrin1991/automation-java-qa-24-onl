@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lecture 13">
+
+    <test name="Login test">
+        <classes>
+            <class name="lecture_13.LoginPageFactoryTest"/>
+        </classes>
+    </test>
+
+    <test name="Product Test">
+        <classes>
+            <class name="lecture_13.ProductPageFactoryTest"/>
+        </classes>
+    </test>
+
+    <test name="Value object test">
+        <classes>
+            <class name="lecture_13.ValueObjectTest"/>
+        </classes>
+    </test>
+</suite>
