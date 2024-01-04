@@ -1,5 +1,6 @@
 package pageObjects.baseObjects;
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 
 import static driver.DriverCreation.getDriver;
 
+@Log4j
 public abstract class BasePage {
     protected WebDriver driver;
     public WebDriverWait wait;
@@ -26,7 +28,7 @@ public abstract class BasePage {
     }
 
     protected void navigateTo(String url) {
-        System.out.println("Navigate to :: " + url);
+        log.info("Navigate to :: " + url);
         driver.get(url);
     }
 
@@ -35,7 +37,7 @@ public abstract class BasePage {
     }
 
     protected void click(WebElement element) {
-        System.out.println("Click on element :: " + element);
+        log.info("Click on element :: " + element);
         waitUntilElementToBeClickable(element);
         element.click();
     }
@@ -45,7 +47,7 @@ public abstract class BasePage {
     }
 
     protected void sendKeys(WebElement element, CharSequence... charSequences) {
-        System.out.println("Enter in :: " + element + ", next values :: " + Arrays.toString(charSequences));
+        log.info("Enter in :: " + element + ", next values :: " + Arrays.toString(charSequences));
         element.clear();
         element.sendKeys(charSequences);
     }
@@ -79,12 +81,12 @@ public abstract class BasePage {
     }
 
     protected void waitUntilTextToBe(By by, String expectedText) {
-        System.out.println("Wait until text to be present  :: " + expectedText);
+        log.info("Wait until text to be present  :: " + expectedText);
         wait.until(ExpectedConditions.textToBe(by, expectedText));
     }
 
     protected void waitUntilTextNotToBe(By by, String expectedText) {
-        System.out.println("Wait until text not to be present  :: " + expectedText);
+        log.info("Wait until text not to be present  :: " + expectedText);
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(by, expectedText)));
     }
 
@@ -93,7 +95,7 @@ public abstract class BasePage {
     }
 
     protected void waitUntilElementToBeClickable(WebElement element) {
-        System.out.println("Wait until element to be clickable  :: " + element);
+        log.info("Wait until element to be clickable  :: " + element);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -102,7 +104,7 @@ public abstract class BasePage {
     }
 
     protected void waitUntilElementToBeNotClickable(WebElement element) {
-        System.out.println("Wait until element not to be clickable  :: " + element);
+        log.info("Wait until element not to be clickable  :: " + element);
         wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(element)));
     }
 

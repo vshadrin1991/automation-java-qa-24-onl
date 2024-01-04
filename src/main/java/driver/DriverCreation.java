@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import propertyUtils.PropertyReader;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -21,7 +22,7 @@ public class DriverCreation {
             switch (type) {
                 case CHROME:
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("start-maximized");
+                    options.addArguments(PropertyReader.getProperties().getProperty("browser.option").split(";"));
                     options.setExperimentalOption("prefs", new HashMap<>() {{
                         put("profile.default_content_settings.popups", 0);
                         put("download.default_directory", System.getProperty("user.dir") + separator + "target");

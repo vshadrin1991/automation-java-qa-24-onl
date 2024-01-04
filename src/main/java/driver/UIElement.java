@@ -1,11 +1,13 @@
 package driver;
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
+@Log4j
 public class UIElement implements WebElement {
     private final WebElement element;
     private final WebDriverWait wait;
@@ -19,10 +21,10 @@ public class UIElement implements WebElement {
     @Override
     public void click() {
         try {
-            System.out.println("Click on :: " + element);
+            log.info("Click on :: " + element);
             element.click();
         } catch (ElementClickInterceptedException exception) {
-            System.out.println("Opps, Something went wrong. I will try again click on :: " + element);
+            log.info("Opps, Something went wrong. I will try again click on :: " + element);
             wait.until(ExpectedConditions.elementToBeClickable(element));
             element.click();
         }
