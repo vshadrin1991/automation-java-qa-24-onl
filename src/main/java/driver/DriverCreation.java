@@ -15,10 +15,10 @@ import static java.io.File.separator;
 
 public class DriverCreation {
 
-    private static WebDriver webDriver;
+    private static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
     public static void createDriver(DriverTypes type) {
-        if (webDriver == null) {
+        if (webDriver.get() == null) {
             switch (type) {
                 case CHROME:
                     ChromeOptions options = new ChromeOptions();
@@ -27,28 +27,28 @@ public class DriverCreation {
                         put("profile.default_content_settings.popups", 0);
                         put("download.default_directory", System.getProperty("user.dir") + separator + "target");
                     }});
-                    webDriver = new ChromeDriver(options);
+                    webDriver.set(new ChromeDriver(options));
                     break;
                 case FIREFOX:
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    webDriver = new FirefoxDriver(firefoxOptions);
+                    webDriver.set(new FirefoxDriver(firefoxOptions));
                     break;
                 case IE:
-                    webDriver = new EdgeDriver();
+                    webDriver.set(new EdgeDriver());
                     break;
             }
-            webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+            webDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         }
     }
 
     public static WebDriver getDriver() {
-        return webDriver;
+        return webDriver.get();
     }
 
     public static void quitDriver() {
-        if (webDriver != null) {
-            webDriver.quit();
-            webDriver = null;
+        if (webDriver.get() != null) {
+            webDriver.get().quit();
+            webDriver.remove();
         }
     }
 }
