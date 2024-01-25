@@ -30,9 +30,6 @@ pipeline {
       post {
                     always {
                             script {
-                                sh '''
-                                chmod o+w ./target/allure-results
-                                '''
                                 allure([
                                         includeProperties: false,
                                         jdk: '',
