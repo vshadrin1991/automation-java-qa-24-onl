@@ -19,6 +19,7 @@
         <lombok.version>1.18.30</lombok.version>
         <logging.version>2.22.1</logging.version>
         <log4j.version>1.2.17</log4j.version>
+        <selenide.version>7.0.0</selenide.version>
         <suite/>
     </properties>
 
@@ -58,7 +59,11 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
