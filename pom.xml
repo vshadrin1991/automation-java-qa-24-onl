@@ -13,13 +13,13 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testng.version>7.8.0</testng.version>
-        <selenium.version>4.15.0</selenium.version>
+        <selenium.version>4.13.0</selenium.version>
         <extentreports.version>2.41.2</extentreports.version>
         <allure.version>2.25.0</allure.version>
         <lombok.version>1.18.30</lombok.version>
         <logging.version>2.22.1</logging.version>
         <log4j.version>1.2.17</log4j.version>
-        <selenide.version>7.0.0</selenide.version>
+        <selenide.version>6.19.1</selenide.version>
         <suite/>
     </properties>
 
