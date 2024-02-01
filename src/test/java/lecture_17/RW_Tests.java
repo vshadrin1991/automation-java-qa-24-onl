@@ -1,9 +1,11 @@
 package lecture_17;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTestSelenide;
 import pageObjects.rw.HomePage;
 import pageObjects.rw.SearchPage;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RW_Tests extends BaseTestSelenide {
 
@@ -14,7 +16,9 @@ public class RW_Tests extends BaseTestSelenide {
                 .enterTo("Минск")
                 .clickSearch();
 
-        get(SearchPage.class)
+        Assert.assertTrue(get(SearchPage.class).getDates().contains("все дни"));
+
+        page(SearchPage.class)
                 .verifyDates("все дни")
                 .clickDate("все дни");
     }

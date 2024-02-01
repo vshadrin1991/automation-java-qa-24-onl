@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lecture 18">
+    <listeners>
+        <listener class-name="testngUtils.SelenideListener"/>
+    </listeners>
+
+    <test name="RW">
+        <classes>
+            <class name="lecture_18.RunRWTests"/>
+        </classes>
+    </test>
+</suite>

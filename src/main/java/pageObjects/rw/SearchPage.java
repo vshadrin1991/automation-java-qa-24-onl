@@ -3,6 +3,7 @@ package pageObjects.rw;
 import com.codeborne.selenide.ElementsCollection;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.matchText;
@@ -14,6 +15,10 @@ public class SearchPage {
     public SearchPage verifyDates(String... dates) {
         Arrays.asList(dates).forEach(date -> this.dates.find(matchText(date)).should(exist));
         return this;
+    }
+
+    public List<String> getDates() {
+        return dates.texts();
     }
 
     public SearchPage clickDate(String date) {
