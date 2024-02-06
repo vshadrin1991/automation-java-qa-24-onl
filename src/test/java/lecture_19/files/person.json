@@ -1,0 +1,19 @@
+{
+  "name": "Tester",
+  "age": 20,
+  "available": true,
+  "family": [
+    {
+      "firstname": "T1",
+      "lastname": null
+    },
+    {
+      "firstname": "T2",
+      "lastname": null
+    }
+  ],
+  "work": {
+    "company": "qa",
+    "position": ""
+  }
+}

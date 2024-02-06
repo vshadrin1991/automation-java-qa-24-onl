@@ -1,0 +1,14 @@
+{
+  "dependencies": [
+    {
+      "groupId": "org.testng",
+      "artifactId": "testng",
+      "version": ""
+    },
+    {
+      "groupId": "org.seleniumhq.selenium",
+      "artifactId": "selenium-jav",
+      "version": ""
+    }
+  ]
+}

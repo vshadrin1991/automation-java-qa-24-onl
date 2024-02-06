@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Tester1",
+    "age": 20,
+    "available": true,
+    "family": [
+      {
+        "firstname": "T1",
+        "lastname": null
+      },
+      {
+        "firstname": "T2",
+        "lastname": null
+      }
+    ],
+    "work": {
+      "company": "",
+      "position": ""
+    }
+  },
+  {
+    "name": "Tester2",
+    "age": 30,
+    "available": true,
+    "family": [
+      {
+        "firstname": "T12",
+        "lastname": null
+      },
+      {
+        "firstname": "T22",
+        "lastname": null
+      }
+    ],
+    "work": {
+      "company": "",
+      "position": ""
+    }
+  }
+]
