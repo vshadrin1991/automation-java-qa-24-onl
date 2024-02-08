@@ -8,7 +8,7 @@ Feature: rw tests
     And i click on search
     Then i check departure time great then 0
     Examples:
-      | From      | To        |
+      | From    | To      |
       | Витебск | Минск   |
       | Минск   | Витебск |
 

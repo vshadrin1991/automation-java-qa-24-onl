@@ -5,7 +5,8 @@ import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTestSelenide;
 import pageObjects.rw.HomePage;
 import pageObjects.rw.SearchPage;
-import static com.codeborne.selenide.Selenide.*;
+
+import static com.codeborne.selenide.Selenide.page;
 
 public class RW_Tests extends BaseTestSelenide {
 

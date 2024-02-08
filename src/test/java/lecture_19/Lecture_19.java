@@ -3,7 +3,7 @@ package lecture_19;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import entities.pojo.Person;
+import entities.pojo.person.Person;
 import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 

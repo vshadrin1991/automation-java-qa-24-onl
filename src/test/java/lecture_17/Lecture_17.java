@@ -9,7 +9,6 @@ import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Configuration.headless;
 import static com.codeborne.selenide.Selenide.*;
 
 public class Lecture_17 {

@@ -1,12 +1,10 @@
 package cucumber.rw;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pageObjects.baseObjects.BaseTestSelenide;
 import pageObjects.rw.HeaderPage;
-import pageObjects.rw.HomePage;
 import pageObjects.rw.SearchResultPage;
 
 public class SearchSteps extends BaseTestSelenide {
