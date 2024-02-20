@@ -32,8 +32,14 @@ public abstract class BasePage {
         driver.get(url);
     }
 
+    protected void click(String xpath) {
+        click(By.xpath(xpath));
+    }
+
     protected void click(By by) {
-        click(driver.findElement(by));
+        log.info("Click on element :: " + by);
+        waitUntilElementToBeClickable(by);
+        driver.findElement(by).click();
     }
 
     protected void click(WebElement element) {
@@ -77,7 +83,7 @@ public abstract class BasePage {
     }
 
     protected List<String> getElementTexts(List<WebElement> webElements) {
-        return webElements.stream().map(data -> data.getText()).collect(Collectors.toList());
+        return webElements.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
     protected void waitUntilTextToBe(By by, String expectedText) {
@@ -90,8 +96,13 @@ public abstract class BasePage {
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(by, expectedText)));
     }
 
+    protected void waitUntilElementToBeClickable(String xpath) {
+        waitUntilElementToBeClickable(By.xpath(xpath));
+    }
+
     protected void waitUntilElementToBeClickable(By by) {
-        waitUntilElementToBeClickable(driver.findElement(by));
+        log.info("Wait until element to be clickable  :: " + by);
+        wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
     protected void waitUntilElementToBeClickable(WebElement element) {
@@ -107,5 +118,4 @@ public abstract class BasePage {
         log.info("Wait until element not to be clickable  :: " + element);
         wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(element)));
     }
-
 }
