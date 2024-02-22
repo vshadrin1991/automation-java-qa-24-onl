@@ -2,19 +2,24 @@ package pageObjects.wildberries;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import pageObjects.baseObjects.BasePage;
 import propertyUtils.PropertyReader;
 
-public class MainPage extends BasePage {
+public class MainPage extends BaseWBPage<MainPage> {
     private final By searchInput = By.id("searchInput");
+    private final By searchImage = By.xpath("//*[@id='searchByImageForm']//*[@name='photo']");
 
-    public MainPage open(){
+    public MainPage open() {
         navigateTo(PropertyReader.getProperties().getProperty("url"));
-        return this;
+        return me();
     }
 
     public MainPage search(String searchData) {
-        sendKeys(searchInput, searchData, Keys.ENTER);
-        return this;
+        enter(searchInput, searchData, Keys.ENTER);
+        return me();
+    }
+
+    public MainPage uploadImage(String imageName) {
+        sendKeys(searchImage, FILE_PATH.concat(imageName));
+        return me();
     }
 }

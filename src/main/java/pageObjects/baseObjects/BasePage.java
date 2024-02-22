@@ -14,12 +14,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static driver.DriverCreation.getDriver;
+import static java.io.File.separator;
 
 @Log4j
 public abstract class BasePage {
     protected WebDriver driver;
     public WebDriverWait wait;
     protected Actions actions;
+    protected final String FILE_PATH = System.getProperty("user.dir") + separator + "src" + separator + "test" + separator + "resources" + separator + "files" + separator;
 
     {
         driver = getDriver();
@@ -53,9 +55,18 @@ public abstract class BasePage {
     }
 
     protected void sendKeys(WebElement element, CharSequence... charSequences) {
+        log.info("Send keys :: " + element + ", next values :: " + Arrays.toString(charSequences));
+        element.sendKeys(charSequences);
+    }
+
+    protected void enter(By by, CharSequence... charSequences) {
+        enter(driver.findElement(by), charSequences);
+    }
+
+    protected void enter(WebElement element, CharSequence... charSequences) {
         log.info("Enter in :: " + element + ", next values :: " + Arrays.toString(charSequences));
         element.clear();
-        element.sendKeys(charSequences);
+        sendKeys(element, charSequences);
     }
 
     protected void waitUntil(Integer seconds) {

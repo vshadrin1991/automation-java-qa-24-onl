@@ -8,10 +8,18 @@ import pageObjects.wildberries.SearchResultPage;
 
 public class WildberriesTest extends BaseTest {
 
+
     @Test(priority = 1)
-    public void popupTest() {
+    public void uploadImageTest() {
         get(MainPage.class)
                 .open()
+                .waitUntilPageLoaded()
+                .uploadImage("download.png");
+    }
+
+    @Test(priority = 2)
+    public void popupTest() {
+        get(MainPage.class)
                 .search("носки eco 401 высокие длинные из хлопка набор 10 пар");
         get(SearchResultPage.class)
                 .waitUntilPageLoaded()

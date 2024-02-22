@@ -34,19 +34,19 @@ public class LoginPage extends BasePage {
     }
 
     public void enterUsername(String username) {
-        sendKeys(this.username, username);
+        enter(this.username, username);
     }
 
     public void enterUsername() {
-        sendKeys(this.username, getProperties().getProperty("username"));
+        enter(this.username, getProperties().getProperty("username"));
     }
 
     public void enterPassword(String password) {
-        sendKeys(this.password, password);
+        enter(this.password, password);
     }
 
     public void enterPassword() {
-        sendKeys(this.password, getProperties().getProperty("password"));
+        enter(this.password, getProperties().getProperty("password"));
     }
 
     public void clickLogin() {

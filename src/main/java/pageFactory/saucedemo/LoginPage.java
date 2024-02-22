@@ -58,22 +58,22 @@ public class LoginPage extends BasePage implements Page<LoginPage> {
     }
 
     public LoginPage enterUsername(String username) {
-        sendKeys(this.username, username);
+        enter(this.username, username);
         return this;
     }
 
     public LoginPage enterUsername() {
-        sendKeys(this.username, getProperties().getProperty("username"));
+        enter(this.username, getProperties().getProperty("username"));
         return this;
     }
 
     public LoginPage enterPassword(String password) {
-        sendKeys(this.password, password);
+        enter(this.password, password);
         return this;
     }
 
     public LoginPage enterPassword() {
-        sendKeys(this.password, getProperties().getProperty("password"));
+        enter(this.password, getProperties().getProperty("password"));
         return this;
     }
 

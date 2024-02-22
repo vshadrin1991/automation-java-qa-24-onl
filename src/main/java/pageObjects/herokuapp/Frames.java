@@ -34,7 +34,7 @@ public class Frames extends BasePage {
 
     public void enterText(String text) {
         log.info(driver.findElement(textField).getText());
-        sendKeys(textField, text);
+        enter(textField, text);
     }
 
     public void unSwitchToFrame() {
